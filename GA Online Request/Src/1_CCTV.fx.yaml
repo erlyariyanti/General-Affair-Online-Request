@@ -1,0 +1,955 @@
+"'1_CCTV' As screen":
+
+    Image29_31 As image:
+        Height: =82
+        Image: ='zyro-image (7)'
+        Width: =339
+        X: =39
+        ZIndex: =3
+
+    Icon5_18 As icon.Cancel:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =48
+        Icon: =Icon.Cancel
+        OnSelect: =Navigate('Main Menu')
+        Width: =39
+        X: =1297
+        Y: =10
+        ZIndex: =4
+
+    FormViewer13_5 As formViewer:
+        DataSource: =CCTV_1
+        Height: =495
+        Item: =Gallery13_3.Selected
+        NumberOfColumns: =1
+        Width: =699
+        X: =664
+        Y: =188
+        ZIndex: =8
+
+        Title_DataCard28 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Width: =699
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+            DataCardKey389 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue380.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue380 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey389.X + DataCardKey389.Width
+                Y: =10
+                ZIndex: =2
+
+        Area_DataCard12 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Area"
+            Default: =ThisItem.Area
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"Area")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =699
+            X: =0
+            Y: =1
+            ZIndex: =9
+
+            DataCardKey390 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue381.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue381 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey390.X + DataCardKey390.Width
+                Y: =10
+                ZIndex: =2
+
+        Departement_DataCard29 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Departement"
+            Default: =ThisItem.Departement
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"Departement")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue382.Selected
+            Width: =699
+            X: =0
+            Y: =2
+            ZIndex: =9
+
+            DataCardKey391 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue382.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue382 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@CCTV_1].Departement)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(CCTV_1.Departement,DataCardValue382.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey391.X + DataCardKey391.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage284 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue382.Y + DataCardValue382.Height
+                ZIndex: =3
+
+            StarVisible261 As label:
+                Align: =Align.Center
+                Height: =DataCardKey391.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey391.Y
+                ZIndex: =4
+
+        "'List Broke_DataCard6' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ListBroke"
+            Default: =ThisItem.'List Broke'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"ListBroke")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =699
+            X: =0
+            Y: =3
+            ZIndex: =9
+
+            DataCardKey392 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue383.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue383 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey392.X + DataCardKey392.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Type CCTV_DataCard3' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="TypeCCTV"
+            Default: =ThisItem.'Type CCTV'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"TypeCCTV")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =699
+            X: =0
+            Y: =4
+            ZIndex: =9
+
+            DataCardKey393 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue384.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue384 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey393.X + DataCardKey393.Width
+                Y: =10
+                ZIndex: =2
+
+        "'No EVS_DataCard3' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="NoEVS"
+            Default: =ThisItem.'No EVS'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"NoEVS")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =699
+            X: =0
+            Y: =5
+            ZIndex: =9
+
+            DataCardKey394 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue385.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue385 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey394.X + DataCardKey394.Width
+                Y: =10
+                ZIndex: =2
+
+        "'No CCTV_DataCard3' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="NoCCTV"
+            Default: =ThisItem.'No CCTV'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"NoCCTV")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =699
+            X: =0
+            Y: =6
+            ZIndex: =9
+
+            DataCardKey395 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue386.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue386 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey395.X + DataCardKey395.Width
+                Y: =10
+                ZIndex: =2
+
+        Comment_DataCard6 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Comment"
+            Default: =ThisItem.Comment
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"Comment")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =699
+            X: =0
+            Y: =7
+            ZIndex: =9
+
+            DataCardKey396 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue387.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue387 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey396.X + DataCardKey396.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Status Approval_DataCard4' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="StatusApproval"
+            Default: =ThisItem.'Status Approval'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"StatusApproval")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue388.Selected
+            Width: =699
+            X: =0
+            Y: =8
+            ZIndex: =9
+
+            DataCardKey397 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue388.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue388 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@CCTV_1].'Status Approval')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(CCTV_1.'Status Approval',DataCardValue388.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey397.X + DataCardKey397.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage285 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue388.Y + DataCardValue388.Height
+                ZIndex: =3
+
+            StarVisible262 As label:
+                Align: =Align.Center
+                Height: =DataCardKey397.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey397.Y
+                ZIndex: =4
+
+        Section_DataCard29 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Section"
+            Default: =ThisItem.Section
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"Section")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue389.Selected
+            Width: =699
+            X: =0
+            Y: =9
+            ZIndex: =9
+
+            DataCardKey398 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue389.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue389 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@CCTV_1].Section)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(CCTV_1.Section,DataCardValue389.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey398.X + DataCardKey398.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage286 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue389.Y + DataCardValue389.Height
+                ZIndex: =3
+
+            StarVisible263 As label:
+                Align: =Align.Center
+                Height: =DataCardKey398.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey398.Y
+                ZIndex: =4
+
+        "'Employee ID_DataCard24' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="EmployeeID"
+            Default: =ThisItem.'Employee ID'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"EmployeeID")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =699
+            X: =0
+            Y: =10
+            ZIndex: =9
+
+            DataCardKey399 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue390.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue390 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey399.X + DataCardKey399.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Approval  Manager_DataCard2' As typedDataCard.comboBoxMultiSelectViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approvers"
+            Default: =ThisItem.'Approval  Manager'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"Approvers")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue391.SelectedItems
+            Width: =699
+            X: =0
+            Y: =11
+            ZIndex: =9
+
+            DataCardKey400 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue391.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue391 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@CCTV_1].'Approval  Manager')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices(CCTV_1.'Approval  Manager',DataCardValue391.SearchText)
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey400.X + DataCardKey400.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage287 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue391.Y + DataCardValue391.Height
+                ZIndex: =3
+
+            StarVisible264 As label:
+                Align: =Align.Center
+                Height: =DataCardKey400.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey400.Y
+                ZIndex: =4
+
+        "'Approval Director_DataCard3' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ApprovalDirector"
+            Default: =ThisItem.'Approval Director'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"ApprovalDirector")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue392.Selected
+            Width: =699
+            X: =0
+            Y: =12
+            ZIndex: =9
+
+            DataCardKey401 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue392.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue392 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@CCTV_1].'Approval Director')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices(CCTV_1.'Approval Director',DataCardValue392.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey401.X + DataCardKey401.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage288 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue392.Y + DataCardValue392.Height
+                ZIndex: =3
+
+            StarVisible265 As label:
+                Align: =Align.Center
+                Height: =DataCardKey401.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey401.Y
+                ZIndex: =4
+
+        "'Approval PIC GA_DataCard8' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ApprovalPICGA"
+            Default: =ThisItem.'Approval PIC GA'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"ApprovalPICGA")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue393.Selected
+            Width: =699
+            X: =0
+            Y: =13
+            ZIndex: =9
+
+            DataCardKey402 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue393.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue393 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@CCTV_1].'Approval PIC GA')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices(CCTV_1.'Approval PIC GA',DataCardValue393.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey402.X + DataCardKey402.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage289 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue393.Y + DataCardValue393.Height
+                ZIndex: =3
+
+            StarVisible266 As label:
+                Align: =Align.Center
+                Height: =DataCardKey402.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey402.Y
+                ZIndex: =4
+
+        "'Approval PIC GA Superrior_DataCard7' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ApprovalPICGASuperrior"
+            Default: =ThisItem.'Approval PIC GA Superrior'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"ApprovalPICGASuperrior")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue394.Selected
+            Width: =699
+            X: =0
+            Y: =14
+            ZIndex: =9
+
+            DataCardKey403 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue394.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue394 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@CCTV_1].'Approval PIC GA Superrior')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices(CCTV_1.'Approval PIC GA Superrior',DataCardValue394.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey403.X + DataCardKey403.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage290 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue394.Y + DataCardValue394.Height
+                ZIndex: =3
+
+            StarVisible267 As label:
+                Align: =Align.Center
+                Height: =DataCardKey403.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey403.Y
+                ZIndex: =4
+
+        "'Approval HRGA Director_DataCard3' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ApprovalHRGADirector"
+            Default: =ThisItem.'Approval HRGA Director'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@CCTV_1],DataSourceInfo.DisplayName,"ApprovalHRGADirector")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue395.Selected
+            Width: =699
+            X: =0
+            Y: =15
+            ZIndex: =9
+
+            DataCardKey404 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue395.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue395 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@CCTV_1].'Approval HRGA Director')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices(CCTV_1.'Approval HRGA Director',DataCardValue395.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey404.X + DataCardKey404.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage291 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue395.Y + DataCardValue395.Height
+                ZIndex: =3
+
+            StarVisible268 As label:
+                Align: =Align.Center
+                Height: =DataCardKey404.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey404.Y
+                ZIndex: =4
+
+    Gallery12_5 As gallery.galleryHorizontal:
+        Height: =68
+        Items: =menuList
+        OnSelect: =Set(varTabSelected
+        TemplateSize: =162
+        Width: =847
+        Y: =77
+        ZIndex: =10
+
+        Button40_5 As button:
+            BorderColor: =ColorFade(Color.Maroon, 0%)
+            BorderThickness: =4
+            Fill: |-
+                =If(varTabSelected=ThisItem.id,ColorValue("#C0C0C0"),ColorValue("#800000"))
+            Height: =55
+            HoverColor: =RGBA(116, 116, 116, 1)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            OnSelect: =Set(varTabSelected, ThisItem.id)
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            Text: =ThisItem.id
+            Y: =3
+            ZIndex: =1
+
+    "Gallery13_3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =593
+        Items: |-
+            =If(Gallery12_5.Selected.id = "All",
+            CCTV_1,
+            Filter(CCTV_1, 'Status Approval'.Value = Gallery12_5.Selected.id))
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =118
+        Width: =620
+        X: =1
+        Y: =169
+        ZIndex: =11
+
+        Image27_3 As image:
+            Height: =94
+            Image: =ThisItem.'Created By'.Picture
+            OnSelect: =Select(Parent)
+            Width: =123
+            Y: =15
+            ZIndex: =1
+
+        Title13_3 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image27_3.Width - 104
+            X: =121
+            Y: =26
+            ZIndex: =2
+
+        Subtitle13_3 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title13_3.Width
+            X: =Title13_3.X
+            Y: =66
+            ZIndex: =3
+
+        NextArrow13_3 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator22_3 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    LblAppName1_32 As label:
+        Align: =Align.Center
+        Fill: =ColorFade(Color.Maroon, 0%)
+        Height: =8
+        Text: =""
+        Width: =Parent.Width
+        Y: =82
+        ZIndex: =12
+

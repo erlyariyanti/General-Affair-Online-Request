@@ -1,0 +1,1224 @@
+"'View Exit Permit' As screen":
+
+    LblAppName1_17 As label:
+        Align: =Align.Center
+        Fill: =RGBA(184, 0, 0, 1)
+        Height: =5
+        Text: =""
+        Width: =Parent.Width
+        Y: =77
+        ZIndex: =1
+
+    Image29_17 As image:
+        Height: =82
+        Image: ='zyro-image (7)'
+        Width: =339
+        X: =39
+        ZIndex: =2
+
+    Button13_14 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Normal
+        Height: =77
+        HoverFill: =ColorFade(Color.DarkRed, 0%)
+        OnSelect: =Navigate('Main Menu')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =25
+        Text: ="Menu"
+        Width: =247
+        X: =758
+        ZIndex: =3
+
+    Button13_15 As button:
+        Color: =RGBA(184, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Normal
+        Height: =77
+        HoverFill: =ColorFade(Color.DarkRed, 0%)
+        OnSelect: =Navigate('View All')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =25
+        Text: ="Data View"
+        Width: =247
+        X: =1017
+        ZIndex: =4
+
+    Icon2_10 As icon.Leave:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =53
+        Icon: =Icon.Leave
+        OnSelect: =Navigate(login)
+        Width: =59
+        X: =1293
+        Y: =6
+        ZIndex: =5
+
+    TextInput_3 As text:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =3
+        Default: =""
+        DisabledColor: =RGBA(230, 230, 230, 1)
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =46
+        HintText: ="Search"
+        HoverColor: =ColorFade(Color.Black, 0%)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(230, 230, 230, 1)
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Size: =15
+        Width: =544
+        X: =802
+        Y: =110
+        ZIndex: =6
+
+    Icon15_6 As icon.Search:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =39
+        HoverColor: =ColorFade(Color.Black, 0%)
+        Icon: =Icon.Search
+        Width: =41
+        X: =1301
+        Y: =112
+        ZIndex: =7
+
+    "Gallery4 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =553
+        Items: =Search('Exit Permit', TextInput_3.Text, "Title")
+        Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(230, 230, 230, 1), 0%),RGBA(0, 0, 0, 0))
+        TemplatePadding: =0
+        TemplateSize: =115
+        Width: =586
+        X: =39
+        Y: =174
+        ZIndex: =10
+
+        Image15 As image:
+            Image: =ThisItem.'Created By'.Picture
+            OnSelect: =Select(Parent)
+            X: =17
+            Y: =7
+            ZIndex: =1
+
+        Title4 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image15.Width - 104
+            X: =128
+            Y: =19
+            ZIndex: =2
+
+        Subtitle4 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Employee ID'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title4.Width
+            X: =128
+            Y: =63
+            ZIndex: =3
+
+        NextArrow3 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =53
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =50
+            X: =446
+            Y: =35
+            ZIndex: =4
+
+        Separator11 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Icon18 As icon.Trash:
+            Height: =44
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =UpdateContext({popUpVis:true})
+            Width: =51
+            X: =510
+            Y: =40
+            ZIndex: =6
+
+    FormViewer10 As formViewer:
+        DataSource: ='Exit Permit'
+        Item: =Gallery4.Selected
+        NumberOfColumns: =1
+        Width: =660
+        X: =666
+        Y: =180
+        ZIndex: =16
+
+        Title_DataCard21 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =0
+            ZIndex: =17
+
+            DataCardKey227 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue232.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue232 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey227.X + DataCardKey227.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Employee ID_DataCard13' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_1"
+            Default: =ThisItem.'Employee ID'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_1")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =1
+            ZIndex: =17
+
+            DataCardKey228 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue233.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue233 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey228.X + DataCardKey228.Width
+                Y: =10
+                ZIndex: =2
+
+        Departement_DataCard20 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_2"
+            Default: =ThisItem.Departement
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_2")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue234.Selected
+            Width: =660
+            X: =0
+            Y: =2
+            ZIndex: =17
+
+            DataCardKey229 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue234.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue234 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Exit Permit'].Departement)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('Exit Permit'.Departement,DataCardValue234.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey229.X + DataCardKey229.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage180 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue234.Y + DataCardValue234.Height
+                ZIndex: =3
+
+            StarVisible180 As label:
+                Align: =Align.Center
+                Height: =DataCardKey229.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey229.Y
+                ZIndex: =4
+
+        Section_DataCard17 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_3"
+            Default: =ThisItem.Section
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_3")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue235.Selected
+            Width: =660
+            X: =0
+            Y: =3
+            ZIndex: =17
+
+            DataCardKey230 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue235.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue235 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Exit Permit'].Section)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('Exit Permit'.Section,DataCardValue235.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey230.X + DataCardKey230.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage181 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue235.Y + DataCardValue235.Height
+                ZIndex: =3
+
+            StarVisible181 As label:
+                Align: =Align.Center
+                Height: =DataCardKey230.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey230.Y
+                ZIndex: =4
+
+        "'Car Number_DataCard3' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_4"
+            Default: =ThisItem.'Car Number'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_4")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =4
+            ZIndex: =17
+
+            DataCardKey231 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue236.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue236 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey231.X + DataCardKey231.Width
+                Y: =10
+                ZIndex: =2
+
+        Category_DataCard4 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_5"
+            Default: =ThisItem.Category
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_5")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue237.Selected
+            Width: =660
+            X: =0
+            Y: =5
+            ZIndex: =17
+
+            DataCardKey232 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue237.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue237 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Exit Permit'].Category)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('Exit Permit'.Category,DataCardValue237.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey232.X + DataCardKey232.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage182 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue237.Y + DataCardValue237.Height
+                ZIndex: =3
+
+            StarVisible182 As label:
+                Align: =Align.Center
+                Height: =DataCardKey232.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey232.Y
+                ZIndex: =4
+
+        Date_DataCard3 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_6"
+            Default: =ThisItem.Date
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_6")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =6
+            ZIndex: =17
+
+            DataCardKey233 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue238.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue238 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey233.X + DataCardKey233.Width
+                Y: =10
+                ZIndex: =2
+
+        Item_DataCard6 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_7"
+            Default: =ThisItem.Item
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_7")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =7
+            ZIndex: =17
+
+            DataCardKey234 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue239.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue239 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey234.X + DataCardKey234.Width
+                Y: =10
+                ZIndex: =2
+
+        Qty_DataCard15 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_8"
+            Default: =ThisItem.Qty
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_8")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =8
+            ZIndex: =17
+
+            DataCardKey235 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue240.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue240 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey235.X + DataCardKey235.Width
+                Y: =10
+                ZIndex: =2
+
+        Unit_DataCard10 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_9"
+            Default: =ThisItem.Unit
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_9")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue241.Selected
+            Width: =660
+            X: =0
+            Y: =9
+            ZIndex: =17
+
+            DataCardKey236 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue241.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue241 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Exit Permit'].Unit)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('Exit Permit'.Unit,DataCardValue241.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey236.X + DataCardKey236.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage183 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue241.Y + DataCardValue241.Height
+                ZIndex: =3
+
+            StarVisible183 As label:
+                Align: =Align.Center
+                Height: =DataCardKey236.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey236.Y
+                ZIndex: =4
+
+        Purpose_DataCard12 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_10"
+            Default: =ThisItem.Purpose
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_10")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =10
+            ZIndex: =17
+
+            DataCardKey237 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue242.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue242 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey237.X + DataCardKey237.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Check-in time_DataCard3' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_11"
+            Default: =ThisItem.'Check-in time'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_11")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =11
+            ZIndex: =17
+
+            DataCardKey238 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue243.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue243 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey238.X + DataCardKey238.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Check-out time_DataCard3' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_12"
+            Default: =ThisItem.'Check-out time'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_12")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =12
+            ZIndex: =17
+
+            DataCardKey239 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue244.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue244 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey239.X + DataCardKey239.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Entry Weight_DataCard3' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_13"
+            Default: =ThisItem.'Entry Weight'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_13")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =13
+            ZIndex: =17
+
+            DataCardKey240 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue245.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue245 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey240.X + DataCardKey240.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Weight Out_DataCard3' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_14"
+            Default: =ThisItem.'Weight Out'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_14")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =14
+            ZIndex: =17
+
+            DataCardKey241 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue246.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue246 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey241.X + DataCardKey241.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Weight Difference_DataCard3' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_15"
+            Default: =ThisItem.'Weight Difference'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_15")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =660
+            X: =0
+            Y: =15
+            ZIndex: =17
+
+            DataCardKey242 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue247.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue247 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey242.X + DataCardKey242.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Approval Status_DataCard10' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_16"
+            Default: =ThisItem.'Approval Status'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"field_16")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue248.Selected
+            Width: =660
+            X: =0
+            Y: =16
+            ZIndex: =17
+
+            DataCardKey243 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue248.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue248 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Items: =Choices([@'Exit Permit'].'Approval Status')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices('Exit Permit'.'Approval Status',DataCardValue248.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey243.X + DataCardKey243.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage184 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue248.Y + DataCardValue248.Height
+                ZIndex: =3
+
+            StarVisible184 As label:
+                Align: =Align.Center
+                Height: =DataCardKey243.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey243.Y
+                ZIndex: =4
+
+        "'Approver 1_DataCard5' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approver1"
+            Default: =ThisItem.'Approver 1'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"Approver1")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue249.Selected
+            Width: =660
+            X: =0
+            Y: =17
+            ZIndex: =17
+
+            DataCardKey244 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue249.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue249 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Exit Permit'].'Approver 1')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices('Exit Permit'.'Approver 1',DataCardValue249.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey244.X + DataCardKey244.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage185 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue249.Y + DataCardValue249.Height
+                ZIndex: =3
+
+            StarVisible185 As label:
+                Align: =Align.Center
+                Height: =DataCardKey244.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey244.Y
+                ZIndex: =4
+
+        "'Approver 2_DataCard5' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approver2"
+            Default: =ThisItem.'Approver 2'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"Approver2")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue250.Selected
+            Width: =660
+            X: =0
+            Y: =18
+            ZIndex: =17
+
+            DataCardKey245 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue250.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue250 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Exit Permit'].'Approver 2')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices('Exit Permit'.'Approver 2',DataCardValue250.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey245.X + DataCardKey245.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage186 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue250.Y + DataCardValue250.Height
+                ZIndex: =3
+
+            StarVisible186 As label:
+                Align: =Align.Center
+                Height: =DataCardKey245.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey245.Y
+                ZIndex: =4
+
+        "'Approver 3_DataCard5' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approver3"
+            Default: =ThisItem.'Approver 3'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@'Exit Permit'],DataSourceInfo.DisplayName,"Approver3")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue251.Selected
+            Width: =660
+            X: =0
+            Y: =19
+            ZIndex: =17
+
+            DataCardKey246 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue251.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue251 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@'Exit Permit'].'Approver 3')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices('Exit Permit'.'Approver 3',DataCardValue251.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey246.X + DataCardKey246.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage187 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue251.Y + DataCardValue251.Height
+                ZIndex: =3
+
+            StarVisible187 As label:
+                Align: =Align.Center
+                Height: =DataCardKey246.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey246.Y
+                ZIndex: =4
+
+    Group19 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =16
+
+        Rectangle24 As rectangle:
+            Fill: =RGBA(255, 255, 255, 0.9)
+            Height: =768
+            Visible: =popUpVis
+            Width: =1366
+            ZIndex: =11
+
+        Rectangle31 As rectangle:
+            Fill: =RGBA(153, 153, 153, 1)
+            Height: =234
+            Visible: =popUpVis
+            Width: =642
+            X: =362
+            Y: =267
+            ZIndex: =12
+
+        Label29 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =104
+            Size: =20
+            Text: ="Are You Sure?"
+            Visible: =popUpVis
+            Width: =643
+            X: =362
+            Y: =267
+            ZIndex: =13
+
+        Button23 As button:
+            Fill: =RGBA(255, 191, 0, 1)
+            Height: =64
+            HoverFill: =ColorFade(Color.Red, 0%)
+            OnSelect: |-
+                =Remove('Exit Permit', Gallery4.Selected); Refresh('Exit Permit'); UpdateContext({popUpVis:false})
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =20
+            Text: ="Yes"
+            Visible: =popUpVis
+            Width: =198
+            X: =425
+            Y: =398
+            ZIndex: =14
+
+        Button23_1 As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Height: =64
+            HoverFill: =ColorFade(Color.DarkGreen, 0%)
+            OnSelect: |-
+                =UpdateContext({popUpVis:false})
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =20
+            Text: ="No"
+            Visible: =popUpVis
+            Width: =198
+            X: =740
+            Y: =398
+            ZIndex: =15
+

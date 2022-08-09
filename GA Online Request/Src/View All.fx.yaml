@@ -1,0 +1,714 @@
+"'View All' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    LblAppName1_2 As label:
+        Align: =Align.Center
+        Fill: =RGBA(184, 0, 0, 1)
+        Height: =5
+        Text: =""
+        Width: =Parent.Width
+        Y: =77
+        ZIndex: =2
+
+    Canvas1_1 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =680
+        Width: =1366
+        Y: =88
+        ZIndex: =3
+
+        DataCard1_1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =400
+            Width: =1366
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Group8_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =18
+
+                Image30_2 As image:
+                    Height: =243
+                    Image: ='id_card-removebg-preview'
+                    OnSelect: =Navigate('View BC')
+                    Width: =358
+                    X: =61
+                    Y: =10
+                    ZIndex: =5
+
+                Label6_17 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('View BC')
+                    Size: =18
+                    Text: ="Form Pembuatan Business Card"
+                    Width: =269
+                    X: =105
+                    Y: =253
+                    ZIndex: =6
+
+                Rectangle5_22 As rectangle:
+                    Fill: =RGBA(54, 176, 75, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View BC')
+                    Width: =5
+                    X: =49
+                    ZIndex: =7
+
+                Rectangle5_23 As rectangle:
+                    Fill: =RGBA(54, 176, 75, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View BC')
+                    Width: =5
+                    X: =426
+                    Y: =5
+                    ZIndex: =8
+
+                Rectangle6_11 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(54, 176, 75, 1)
+                    Height: =5
+                    OnSelect: =Navigate('View BC')
+                    Width: =377
+                    X: =49
+                    Y: =350
+                    ZIndex: =9
+
+            Group9_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =18
+
+                Image19_3 As image:
+                    Height: =220
+                    Image: ='Photo-office-supplies-oct3'
+                    OnSelect: =Navigate('View Stationery')
+                    Width: =367
+                    X: =490
+                    Y: =10
+                    ZIndex: =3
+
+                Rectangle5_24 As rectangle:
+                    Fill: =RGBA(255, 0, 0, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Stationery')
+                    Width: =5
+                    X: =485
+                    ZIndex: =10
+
+                Rectangle5_25 As rectangle:
+                    Fill: =RGBA(255, 0, 0, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Stationery')
+                    Width: =5
+                    X: =857
+                    Y: =2
+                    ZIndex: =11
+
+                Rectangle6_12 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 0, 0, 1)
+                    Height: =5
+                    OnSelect: =Navigate('View Stationery')
+                    Width: =377
+                    X: =485
+                    Y: =350
+                    ZIndex: =12
+
+                Label6_18 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('View Stationery')
+                    Size: =18
+                    Text: ="Stationery"
+                    Width: =269
+                    X: =536
+                    Y: =246
+                    ZIndex: =16
+
+            Group10_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =18
+
+                Image25_4 As image:
+                    Height: =232
+                    Image: =snack
+                    OnSelect: =Navigate('View Snack')
+                    Width: =323
+                    X: =950
+                    Y: =26
+                    ZIndex: =4
+
+                Rectangle5_26 As rectangle:
+                    Fill: =RGBA(246, 88, 16, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Snack')
+                    Width: =5
+                    X: =923
+                    ZIndex: =13
+
+                Rectangle5_27 As rectangle:
+                    Fill: =RGBA(221, 79, 14, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Snack')
+                    Width: =5
+                    X: =1295
+                    ZIndex: =14
+
+                Rectangle6_13 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(246, 88, 16, 1)
+                    Height: =5
+                    OnSelect: =Navigate('View Snack')
+                    Width: =377
+                    X: =923
+                    Y: =350
+                    ZIndex: =15
+
+                Label6_19 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('View Snack')
+                    Size: =18
+                    Text: ="Snack & Meals"
+                    Width: =269
+                    X: =986
+                    Y: =258
+                    ZIndex: =17
+
+        DataCard3_1 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =400
+            Width: =1366
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            Group11_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =17
+
+                Image25_5 As image:
+                    Height: =224
+                    Image: ='uniform-removebg-preview'
+                    OnSelect: =Navigate('View Uniform')
+                    Width: =285
+                    X: =102
+                    Y: =5
+                    ZIndex: =4
+
+                Rectangle5_28 As rectangle:
+                    Fill: =RGBA(109, 110, 109, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Uniform')
+                    Width: =5
+                    X: =50
+                    ZIndex: =5
+
+                Rectangle5_29 As rectangle:
+                    Fill: =RGBA(109, 110, 109, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Uniform')
+                    Width: =5
+                    X: =427
+                    Y: =5
+                    ZIndex: =6
+
+                Rectangle6_14 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(109, 110, 109, 1)
+                    Height: =5
+                    OnSelect: =Navigate('View Uniform')
+                    Width: =377
+                    X: =50
+                    Y: =350
+                    ZIndex: =7
+
+                Label6_20 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('View Uniform')
+                    Size: =18
+                    Text: ="Uniform"
+                    Width: =269
+                    X: =106
+                    Y: =229
+                    ZIndex: =8
+
+            Group13_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =17
+
+                Image27_13 As image:
+                    Height: =243
+                    Image: =tm
+                    OnSelect: =Navigate('View Overtime Shuttle Bus & Meals')
+                    Width: =299
+                    X: =523
+                    ZIndex: =2
+
+                Rectangle5_30 As rectangle:
+                    Fill: =RGBA(255, 208, 0, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Overtime Shuttle Bus & Meals')
+                    Width: =5
+                    X: =482
+                    ZIndex: =9
+
+                Rectangle5_31 As rectangle:
+                    Fill: =RGBA(255, 208, 0, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Overtime Shuttle Bus & Meals')
+                    Width: =5
+                    X: =859
+                    Y: =5
+                    ZIndex: =10
+
+                Rectangle6_15 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(255, 208, 0, 1)
+                    Height: =5
+                    OnSelect: =Navigate('View Overtime Shuttle Bus & Meals')
+                    Width: =377
+                    X: =482
+                    Y: =350
+                    ZIndex: =11
+
+                Label6_21 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('View Overtime Shuttle Bus & Meals')
+                    Size: =18
+                    Text: ="Overtime Shuttle Bus & Meals"
+                    Width: =269
+                    X: =538
+                    Y: =243
+                    ZIndex: =12
+
+            Group12_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =17
+
+                Image27_12 As image:
+                    Height: =274
+                    Image: =mp
+                    OnSelect: =Navigate('View Manpower')
+                    Width: =278
+                    X: =965
+                    ZIndex: =3
+
+                Rectangle5_32 As rectangle:
+                    Fill: =RGBA(196, 138, 227, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Manpower')
+                    Width: =5
+                    X: =916
+                    Y: =2
+                    ZIndex: =13
+
+                Rectangle5_33 As rectangle:
+                    Fill: =RGBA(196, 138, 227, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Manpower')
+                    Width: =5
+                    X: =1293
+                    Y: =7
+                    ZIndex: =14
+
+                Rectangle6_16 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(196, 138, 227, 1)
+                    Height: =5
+                    OnSelect: =Navigate('View Manpower')
+                    Width: =377
+                    X: =916
+                    Y: =352
+                    ZIndex: =15
+
+                Label6_22 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('View Manpower')
+                    Size: =18
+                    Text: ="Manpower"
+                    Width: =269
+                    X: =974
+                    Y: =243
+                    ZIndex: =16
+
+        DataCard4_1 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =400
+            Width: =1366
+            X: =0
+            Y: =2
+            ZIndex: =3
+
+            Group14_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =17
+
+                Image27_14 As image:
+                    Height: =241
+                    Image: =saasas
+                    OnSelect: =Navigate('View Air Conditioner')
+                    Width: =315
+                    X: =83
+                    Y: =2
+                    ZIndex: =2
+
+                Rectangle5_34 As rectangle:
+                    Height: =350
+                    OnSelect: =Navigate('View Air Conditioner')
+                    Width: =5
+                    X: =52
+                    ZIndex: =5
+
+                Rectangle5_35 As rectangle:
+                    Height: =350
+                    OnSelect: =Navigate('View Air Conditioner')
+                    Width: =5
+                    X: =424
+                    Y: =2
+                    ZIndex: =6
+
+                Rectangle6_17 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Height: =5
+                    OnSelect: =Navigate('View Air Conditioner')
+                    Width: =377
+                    X: =52
+                    Y: =350
+                    ZIndex: =7
+
+                Label6_23 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('View Air Conditioner')
+                    Size: =18
+                    Text: ="Air Conditioner"
+                    Width: =269
+                    X: =106
+                    Y: =245
+                    ZIndex: =14
+
+            Group15_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =17
+
+                Image27_15 As image:
+                    Height: =263
+                    Image: =cctv
+                    OnSelect: =Navigate('View CCTV')
+                    Width: =377
+                    X: =485
+                    ZIndex: =3
+
+                Rectangle5_36 As rectangle:
+                    Fill: =RGBA(153, 207, 236, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View CCTV')
+                    Width: =5
+                    X: =485
+                    ZIndex: =8
+
+                Rectangle5_37 As rectangle:
+                    Fill: =RGBA(153, 207, 236, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View CCTV')
+                    Width: =5
+                    X: =857
+                    Y: =2
+                    ZIndex: =9
+
+                Rectangle6_18 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(153, 207, 236, 1)
+                    Height: =5
+                    OnSelect: =Navigate('View CCTV')
+                    Width: =377
+                    X: =485
+                    Y: =350
+                    ZIndex: =10
+
+                Label6_24 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =82
+                    OnSelect: =Navigate('View CCTV')
+                    Size: =18
+                    Text: ="CCTV"
+                    Width: =205
+                    X: =571
+                    Y: =250
+                    ZIndex: =15
+
+            Group16_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =17
+
+                Image2_4 As image:
+                    Height: =227
+                    Image: ='f-removebg-preview'
+                    OnSelect: =Navigate('View Access Card')
+                    Width: =356
+                    X: =940
+                    ZIndex: =4
+
+                Rectangle5_38 As rectangle:
+                    Fill: =RGBA(222, 166, 0, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Access Card')
+                    Width: =5
+                    X: =919
+                    ZIndex: =11
+
+                Rectangle5_39 As rectangle:
+                    Fill: =RGBA(222, 166, 0, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Access Card')
+                    Width: =5
+                    X: =1291
+                    Y: =2
+                    ZIndex: =12
+
+                Rectangle6_19 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(222, 166, 0, 1)
+                    Height: =5
+                    OnSelect: =Navigate('View Access Card')
+                    Width: =377
+                    X: =919
+                    Y: =350
+                    ZIndex: =13
+
+                Label6_25 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('View Access Card')
+                    Size: =18
+                    Text: ="Access Card"
+                    Width: =269
+                    X: =973
+                    Y: =243
+                    ZIndex: =16
+
+        DataCard6_1 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =400
+            Width: =1366
+            X: =0
+            Y: =3
+            ZIndex: =4
+
+            Group17_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =12
+
+                Image27_16 As image:
+                    Height: =237
+                    Image: ='sj-removebg-preview'
+                    ImagePosition: =ImagePosition.Stretch
+                    OnSelect: =Navigate('View Exit Permit')
+                    Width: =314
+                    X: =287
+                    Y: =2
+                    ZIndex: =2
+
+                Rectangle5_40 As rectangle:
+                    Fill: =RGBA(116, 116, 116, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Exit Permit')
+                    Width: =5
+                    X: =256
+                    ZIndex: =4
+
+                Rectangle5_41 As rectangle:
+                    Fill: =RGBA(116, 116, 116, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Exit Permit')
+                    Width: =5
+                    X: =628
+                    Y: =2
+                    ZIndex: =5
+
+                Rectangle6_20 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(116, 116, 116, 1)
+                    Height: =5
+                    OnSelect: =Navigate('View Exit Permit')
+                    Width: =377
+                    X: =256
+                    Y: =350
+                    ZIndex: =6
+
+                Label6_26 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('View Exit Permit')
+                    Size: =18
+                    Text: ="SIKB"
+                    Width: =269
+                    X: =310
+                    Y: =245
+                    ZIndex: =10
+
+            Group18_1 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =12
+
+                Image27_17 As image:
+                    Height: =228
+                    Image: ='2334337-removebg-preview'
+                    OnSelect: =Navigate('View Souvenir')
+                    Width: =332
+                    X: =722
+                    ZIndex: =3
+
+                Rectangle5_42 As rectangle:
+                    Fill: =RGBA(0, 155, 163, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Souvenir')
+                    Width: =5
+                    X: =722
+                    ZIndex: =7
+
+                Rectangle5_43 As rectangle:
+                    Fill: =RGBA(0, 155, 163, 1)
+                    Height: =350
+                    OnSelect: =Navigate('View Souvenir')
+                    Width: =5
+                    X: =1094
+                    Y: =2
+                    ZIndex: =8
+
+                Rectangle6_21 As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    Fill: =RGBA(0, 155, 163, 1)
+                    Height: =5
+                    OnSelect: =Navigate('View Souvenir')
+                    Width: =377
+                    X: =722
+                    Y: =350
+                    ZIndex: =9
+
+                Label6_27 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('View Souvenir')
+                    Size: =18
+                    Text: ="Souvenir"
+                    Width: =269
+                    X: =780
+                    Y: =239
+                    ZIndex: =11
+
+    Image29_2 As image:
+        Height: =82
+        Image: ='zyro-image (7)'
+        Width: =339
+        X: =39
+        ZIndex: =4
+
+    Button13_4 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: ="Cambria Math"
+        FontWeight: =FontWeight.Bold
+        Height: =77
+        HoverFill: =ColorFade(Color.DarkRed, 0%)
+        OnSelect: =Navigate('Main Menu')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =25
+        Text: ="Menu"
+        Width: =247
+        X: =758
+        ZIndex: =5
+
+    Button13_5 As button:
+        Color: =RGBA(184, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: ="Cambria Math"
+        FontWeight: =FontWeight.Bold
+        Height: =77
+        HoverFill: =ColorFade(Color.DarkRed, 0%)
+        OnSelect: =Navigate('View All')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =25
+        Text: ="Data View"
+        Width: =247
+        X: =1017
+        ZIndex: =6
+
+    Icon2_3 As icon.Leave:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =53
+        Icon: =Icon.Leave
+        OnSelect: =Navigate(login)
+        Width: =59
+        X: =1293
+        Y: =6
+        ZIndex: =8
+

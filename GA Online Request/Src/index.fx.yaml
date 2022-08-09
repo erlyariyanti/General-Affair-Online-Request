@@ -1,0 +1,58 @@
+index As screen:
+    Fill: =
+
+    Image9 As image:
+        Height: =768
+        Image: =pt
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Label1 As label:
+        Align: =Align.Center
+        Font: ="Times New Roman"
+        Height: =93
+        Size: =60
+        Text: ="General Affair Online Request"
+        Width: =Parent.Width
+        X: =
+        Y: =62
+        ZIndex: =3
+
+    Button11 As button:
+        BorderColor: =ColorFade( Color.ForestGreen, 100% )
+        DisabledBorderColor: =RGBA(0, 134, 208, 1)
+        Fill: =RGBA(0, 134, 208, 1)
+        Font: ="Cambria Math"
+        FontWeight: =FontWeight.Normal
+        Height: =76
+        OnSelect: =Navigate('Login As')
+        PressedBorderColor: =ColorFade( Color.Green, 100% )
+        Size: =25
+        Text: ="GET STARTED"
+        Width: =244
+        X: =561
+        Y: =622
+        ZIndex: =5
+
+    Timer2 As timer:
+        AutoStart: =true
+        Color: =RGBA(0, 0, 0, 0)
+        Duration: =100
+        Fill: =RGBA(0, 0, 0, 0)
+        OnTimerEnd: |-
+            =UpdateContext({varMessageX:If(varMessageX > index.Width,-Label1,Label5.Width,varMessageX + 10)})
+        Repeat: =true
+        Width: =88
+        X: =1278
+        ZIndex: =6
+
+    Label5 As label:
+        Color: =RGBA(0, 0, 0, 0)
+        FontWeight: =FontWeight.Bold
+        Size: =10
+        Text: ="Bridgestone Tire Indonesia || Bridgestone Tire Indonesia ||  Bridegstone Tire Indonesia  || Bridgestone Tire Indonesia|| Bridgestone Tire Indonesia || Bridgestone Tire Indonesia"
+        Width: =1366
+        X: =varMessageX
+        Y: =728
+        ZIndex: =7
+

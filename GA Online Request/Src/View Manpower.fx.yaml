@@ -1,0 +1,1046 @@
+"'View Manpower' As screen":
+
+    LblAppName1_11 As label:
+        Align: =Align.Center
+        Fill: =RGBA(184, 0, 0, 1)
+        Height: =5
+        Text: =""
+        Width: =Parent.Width
+        Y: =77
+        ZIndex: =1
+
+    Image29_11 As image:
+        Height: =82
+        Image: ='zyro-image (7)'
+        Width: =339
+        X: =39
+        ZIndex: =2
+
+    Button13_10 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Normal
+        Height: =77
+        HoverFill: =ColorFade(Color.DarkRed, 0%)
+        OnSelect: =Navigate('Main Menu')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =25
+        Text: ="Menu"
+        Width: =247
+        X: =772
+        Y: =5
+        ZIndex: =3
+
+    Button13_11 As button:
+        Color: =RGBA(184, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Normal
+        Height: =77
+        HoverFill: =ColorFade(Color.DarkRed, 0%)
+        OnSelect: =Navigate('View All')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =25
+        Text: ="Data View"
+        Width: =247
+        X: =1026
+        Y: =5
+        ZIndex: =4
+
+    "Gallery7 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =561
+        Items: =Search(Manpower_1,TextInput_2.Text,"Name")
+        Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected, ColorFade(RGBA(230, 230, 230, 1), 0%),RGBA(0, 0, 0, 0))
+        TemplatePadding: =0
+        TemplateSize: =121
+        Transition: =Transition.Pop
+        Width: =602
+        X: =21
+        Y: =186
+        ZIndex: =6
+
+        Image2 As image:
+            Image: =ThisItem.'Created By'.Picture
+            OnSelect: =Select(Parent)
+            Width: =118
+            X: =16
+            Y: =10
+            ZIndex: =1
+
+        Title7 As label:
+            Height: =39
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =248
+            X: =134
+            Y: =19
+            ZIndex: =2
+
+        Subtitle7 As label:
+            Height: =32
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Area
+            VerticalAlign: =VerticalAlign.Top
+            Width: =248
+            X: =Title7.X
+            Y: =58
+            ZIndex: =3
+
+        NextArrow7 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =412
+            Y: =29
+            ZIndex: =4
+
+        Separator14 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Icon10 As icon.Trash:
+            Height: =43
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =Select(Parent);
+                UpdateContext({popUpVis:true})
+            Width: =55
+            X: =488
+            Y: =37
+            ZIndex: =6
+
+    FormViewer3 As formViewer:
+        DataSource: =Manpower_1
+        Item: =Gallery7.Selected
+        NumberOfColumns: =1
+        Width: =658
+        X: =708
+        Y: =234
+        ZIndex: =10
+
+        Name_DataCard8 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Name"
+            Default: =ThisItem.Name
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"Name")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =658
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey111 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue105.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue105 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey111.X + DataCardKey111.Width
+                Y: =10
+                ZIndex: =2
+
+        Section_DataCard23 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Section"
+            Default: =ThisItem.Section
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"Section")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue131.Selected
+            Width: =658
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey147 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue131.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue131 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Manpower_1].Section)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Manpower_1.Section,DataCardValue131.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey147.X + DataCardKey147.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage153 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue131.Y + DataCardValue131.Height
+                ZIndex: =3
+
+            StarVisible142 As label:
+                Align: =Align.Center
+                Height: =DataCardKey147.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey147.Y
+                ZIndex: =4
+
+        "'Approver 1_DataCard12' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approver1"
+            Default: =ThisItem.'Approver 1'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"Approver1")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue273.Selected
+            Width: =658
+            X: =0
+            Y: =8
+            ZIndex: =1
+
+            DataCardKey284 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue273.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue273 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Manpower_1].'Approver 1')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices(Manpower_1.'Approver 1',DataCardValue273.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey284.X + DataCardKey284.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage145 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue273.Y + DataCardValue273.Height
+                ZIndex: =3
+
+            StarVisible127 As label:
+                Align: =Align.Center
+                Height: =DataCardKey284.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey284.Y
+                ZIndex: =4
+
+        "'Approver 1 Status_DataCard5' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approver1Status"
+            Default: =ThisItem.'Approver 1 Status'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"Approver1Status")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue274.Selected
+            Width: =658
+            X: =0
+            Y: =9
+            ZIndex: =1
+
+            DataCardKey285 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue274.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue274 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Items: =Choices([@Manpower_1].'Approver 1 Status')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Manpower_1.'Approver 1 Status',DataCardValue274.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey285.X + DataCardKey285.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage146 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue274.Y + DataCardValue274.Height
+                ZIndex: =3
+
+            StarVisible128 As label:
+                Align: =Align.Center
+                Height: =DataCardKey285.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey285.Y
+                ZIndex: =4
+
+        "'Approver 2_DataCard12' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approver2"
+            Default: =ThisItem.'Approver 2'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"Approver2")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue275.Selected
+            Width: =658
+            X: =0
+            Y: =10
+            ZIndex: =1
+
+            DataCardKey286 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue275.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue275 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Manpower_1].'Approver 2')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices(Manpower_1.'Approver 2',DataCardValue275.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey286.X + DataCardKey286.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage147 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue275.Y + DataCardValue275.Height
+                ZIndex: =3
+
+            StarVisible129 As label:
+                Align: =Align.Center
+                Height: =DataCardKey286.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey286.Y
+                ZIndex: =4
+
+        "'Approver 2 Status_DataCard5' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approver2Status"
+            Default: =ThisItem.'Approver 2 Status'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"Approver2Status")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue276.Selected
+            Width: =658
+            X: =0
+            Y: =11
+            ZIndex: =1
+
+            DataCardKey287 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue276.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue276 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Items: =Choices([@Manpower_1].'Approver 2 Status')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Manpower_1.'Approver 2 Status',DataCardValue276.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey287.X + DataCardKey287.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage148 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue276.Y + DataCardValue276.Height
+                ZIndex: =3
+
+            StarVisible130 As label:
+                Align: =Align.Center
+                Height: =DataCardKey287.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey287.Y
+                ZIndex: =4
+
+        "'Approver 3_DataCard12' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approver3"
+            Default: =ThisItem.'Approver 3'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"Approver3")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue278.Selected
+            Width: =658
+            X: =0
+            Y: =12
+            ZIndex: =1
+
+            DataCardKey289 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue278.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue278 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["DisplayName","Email","Picture"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Manpower_1].'Approver 3')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["DisplayName"]
+                SearchItems: =Choices(Manpower_1.'Approver 3',DataCardValue278.SearchText)
+                SelectMultiple: =false
+                Template: =ListItemTemplate.Person
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey289.X + DataCardKey289.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage149 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue278.Y + DataCardValue278.Height
+                ZIndex: =3
+
+            StarVisible134 As label:
+                Align: =Align.Center
+                Height: =DataCardKey289.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey289.Y
+                ZIndex: =4
+
+        "'Approver 3 Status_DataCard5' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Approver3Status"
+            Default: =ThisItem.'Approver 3 Status'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"Approver3Status")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue279.Selected
+            Width: =658
+            X: =0
+            Y: =13
+            ZIndex: =1
+
+            DataCardKey290 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue279.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue279 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Items: =Choices([@Manpower_1].'Approver 3 Status')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Manpower_1.'Approver 3 Status',DataCardValue279.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey290.X + DataCardKey290.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage150 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue279.Y + DataCardValue279.Height
+                ZIndex: =3
+
+            StarVisible138 As label:
+                Align: =Align.Center
+                Height: =DataCardKey290.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey290.Y
+                ZIndex: =4
+
+        Departement_DataCard8 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_1"
+            Default: =ThisItem.Departement
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"field_1")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue106.Selected
+            Width: =658
+            X: =0
+            Y: =1
+            ZIndex: =11
+
+            DataCardKey131 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue106.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue106 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Manpower_1].Departement)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Manpower_1.Departement,DataCardValue106.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey131.X + DataCardKey131.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage77 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue106.Y + DataCardValue106.Height
+                ZIndex: =3
+
+            StarVisible77 As label:
+                Align: =Align.Center
+                Height: =DataCardKey131.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey131.Y
+                ZIndex: =4
+
+        "'Date & Time Request_DataCard2' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_2"
+            Default: =ThisItem.'Date & Time Request'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"field_2")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =658
+            X: =0
+            Y: =3
+            ZIndex: =11
+
+            DataCardKey133 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue125.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue125 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey133.X + DataCardKey133.Width
+                Y: =10
+                ZIndex: =2
+
+        Purpose_DataCard6 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_3"
+            Default: =ThisItem.Purpose
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"field_3")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =658
+            X: =0
+            Y: =4
+            ZIndex: =11
+
+            DataCardKey134 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue127.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue127 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey134.X + DataCardKey134.Width
+                Y: =10
+                ZIndex: =2
+
+        Location_DataCard8 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_4"
+            Default: =ThisItem.Location
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"field_4")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue128.Selected
+            Width: =658
+            X: =0
+            Y: =5
+            ZIndex: =11
+
+            DataCardKey135 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue128.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue128 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Manpower_1].Location)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Manpower_1.Location,DataCardValue128.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey135.X + DataCardKey135.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage78 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue128.Y + DataCardValue128.Height
+                ZIndex: =3
+
+            StarVisible78 As label:
+                Align: =Align.Center
+                Height: =DataCardKey135.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey135.Y
+                ZIndex: =4
+
+        Area_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_5"
+            Default: =ThisItem.Area
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"field_5")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =658
+            X: =0
+            Y: =6
+            ZIndex: =11
+
+            DataCardKey136 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue129.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue129 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey136.X + DataCardKey136.Width
+                Y: =10
+                ZIndex: =2
+
+        Qty_DataCard6 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_6"
+            Default: =ThisItem.Qty
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Manpower_1],DataSourceInfo.DisplayName,"field_6")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =658
+            X: =0
+            Y: =7
+            ZIndex: =11
+
+            DataCardKey137 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue130.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue130 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey137.X + DataCardKey137.Width
+                Y: =10
+                ZIndex: =2
+
+    Group20 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =21
+
+        Rectangle25 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.7)
+            Height: =768
+            Visible: =popUpVis
+            Width: =1366
+            ZIndex: =16
+
+        Rectangle26 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =234
+            Visible: =popUpVis
+            Width: =642
+            X: =362
+            Y: =267
+            ZIndex: =17
+
+        Label21 As label:
+            Align: =Align.Center
+            Height: =119
+            Size: =20
+            Text: ="Are You Sure?"
+            Visible: =popUpVis
+            Width: =642
+            X: =362
+            Y: =267
+            ZIndex: =18
+
+        Button30 As button:
+            Fill: =RGBA(255, 191, 0, 1)
+            Height: =64
+            HoverFill: =ColorFade(Color.Red, 0%)
+            OnSelect: |-
+                =Remove(Manpower_1, Gallery7.Selected);
+                Refresh(Manpower_1);
+                UpdateContext({popUpVis:false});
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =20
+            Text: ="Yes"
+            Visible: =popUpVis
+            Width: =198
+            X: =425
+            Y: =398
+            ZIndex: =19
+
+        Button30_1 As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Height: =64
+            OnSelect: |-
+                =UpdateContext({popUpVis:false})
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =20
+            Text: ="No"
+            Visible: =popUpVis
+            Width: =198
+            X: =744
+            Y: =398
+            ZIndex: =20
+
+    Icon5_24 As icon.Cancel:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =48
+        Icon: =Icon.Cancel
+        OnSelect: =Navigate('Main Menu')
+        Width: =39
+        X: =1299
+        Y: =14
+        ZIndex: =24
+
+    Group27_2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        TextInput_2 As text:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =3
+            Default: =""
+            DisabledBorderColor: =RGBA(230, 230, 230, 1)
+            DisabledColor: =RGBA(230, 230, 230, 1)
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =46
+            HintText: ="Search"
+            HoverColor: =ColorFade(Color.Black, 0%)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(230, 230, 230, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =15
+            Width: =544
+            X: =798
+            Y: =108
+            ZIndex: =22
+
+        Icon15_11 As icon.Search:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(230, 230, 230, 1)
+            Height: =39
+            HoverColor: =ColorFade(Color.Black, 0%)
+            Icon: =Icon.Search
+            Width: =41
+            X: =1301
+            Y: =112
+            ZIndex: =23
+

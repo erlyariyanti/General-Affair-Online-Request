@@ -1,0 +1,44 @@
+"'Login As' As screen":
+    BackgroundImage: =
+    ImagePosition: =ImagePosition.Center
+
+    Label26 As label:
+        Align: =Align.Center
+        Height: =60
+        Size: =30
+        Text: ="Login"
+        Width: =335
+        X: =936
+        Y: =148
+        ZIndex: =1
+
+    Button34 As button:
+        Height: =67
+        HoverColor: =RGBA(0, 18, 107, 1)
+        HoverFill: =ColorFade(Color.White, 0%)
+        OnSelect: =Navigate(login)
+        Text: ="Login as a Requestor"
+        Width: =352
+        X: =961
+        Y: =333
+        ZIndex: =2
+
+    Button34_1 As button:
+        Fill: =RGBA(0, 195, 255, 1)
+        Height: =67
+        HoverColor: =RGBA(0, 221, 255, 1)
+        HoverFill: =ColorFade(Color.White, 0%)
+        OnSelect: =Navigate('Main Menu_2')
+        Text: ="Login as an Approver"
+        Width: =352
+        X: =961
+        Y: =470
+        ZIndex: =3
+
+    Image24 As image:
+        Height: =768
+        Image: ='zyro-image (8)'
+        Width: =898
+        X: =29
+        ZIndex: =4
+

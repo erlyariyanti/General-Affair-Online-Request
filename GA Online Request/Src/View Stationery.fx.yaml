@@ -1,0 +1,771 @@
+"'View Stationery' As screen":
+    Fill: =
+
+    LblAppName1_3 As label:
+        Align: =Align.Center
+        Fill: =RGBA(184, 0, 0, 1)
+        Height: =5
+        Text: =""
+        Width: =Parent.Width
+        Y: =77
+        ZIndex: =1
+
+    Image29_3 As image:
+        Height: =82
+        Image: ='zyro-image (7)'
+        Width: =339
+        X: =39
+        ZIndex: =2
+
+    "Gallery6 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Items: =Search(Stationery_1, TextInput2.Text, "Title")
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =126
+        Width: =556
+        X: =17
+        Y: =175
+        ZIndex: =3
+
+        Image31 As image:
+            Height: =105
+            Image: =ThisItem.'Created By'.Picture
+            OnSelect: =Select(Parent)
+            Width: =121
+            X: =12
+            Y: =10
+            ZIndex: =1
+
+        Title6 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.Title
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image31.Width - 104
+            X: =133
+            Y: =22
+            ZIndex: =2
+
+        Subtitle6 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Employee ID'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title6.Width
+            X: =Title6.X
+            Y: =Title6.Y + Title6.Height + 4
+            ZIndex: =3
+
+        NextArrow6 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =54
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =404
+            Y: =34
+            ZIndex: =4
+
+        Separator5 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Icon8 As icon.Trash:
+            Height: =48
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =Select(Parent); UpdateContext({popUpVis:true})
+            Width: =56
+            X: =476
+            Y: =37
+            ZIndex: =6
+
+    Button13_8 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Normal
+        Height: =77
+        HoverFill: =ColorFade(Color.DarkRed, 0%)
+        OnSelect: =Navigate('Main Menu')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =25
+        Text: ="Menu"
+        Width: =247
+        X: =756
+        ZIndex: =4
+
+    Button13_9 As button:
+        Color: =RGBA(184, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Normal
+        Height: =77
+        HoverFill: =ColorFade(Color.DarkRed, 0%)
+        OnSelect: =Navigate('View All')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =25
+        Text: ="Data View"
+        Width: =247
+        X: =1015
+        ZIndex: =5
+
+    FormViewer5 As formViewer:
+        DataSource: =Stationery_1
+        Item: =Gallery6.Selected
+        NumberOfColumns: =1
+        Width: =687
+        X: =630
+        Y: =222
+        ZIndex: =7
+
+        Title_DataCard12 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stationery_1],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Width: =687
+            X: =0
+            Y: =0
+            ZIndex: =12
+
+            DataCardKey43 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue42.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue42 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey43.X + DataCardKey43.Width
+                Y: =10
+                ZIndex: =2
+
+        "'Employee ID_DataCard4' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_1"
+            Default: =ThisItem.'Employee ID'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stationery_1],DataSourceInfo.DisplayName,"field_1")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Width: =687
+            X: =0
+            Y: =1
+            ZIndex: =12
+
+            DataCardKey44 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue43.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue43 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey44.X + DataCardKey44.Width
+                Y: =10
+                ZIndex: =2
+
+        Departement_DataCard11 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_2"
+            Default: =ThisItem.Departement
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stationery_1],DataSourceInfo.DisplayName,"field_2")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue44.Selected
+            Width: =687
+            X: =0
+            Y: =2
+            ZIndex: =12
+
+            DataCardKey45 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue44.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue44 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Stationery_1].Departement)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Stationery_1.Departement,DataCardValue44.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey45.X + DataCardKey45.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage43 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue44.Y + DataCardValue44.Height
+                ZIndex: =3
+
+            StarVisible43 As label:
+                Align: =Align.Center
+                Height: =DataCardKey45.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey45.Y
+                ZIndex: =4
+
+        Section_DataCard7 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_3"
+            Default: =ThisItem.Section
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stationery_1],DataSourceInfo.DisplayName,"field_3")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue52.Selected
+            Width: =687
+            X: =0
+            Y: =3
+            ZIndex: =12
+
+            DataCardKey46 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue52.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue52 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Stationery_1].Section)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Stationery_1.Section,DataCardValue52.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey46.X + DataCardKey46.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage44 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue52.Y + DataCardValue52.Height
+                ZIndex: =3
+
+            StarVisible44 As label:
+                Align: =Align.Center
+                Height: =DataCardKey46.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey46.Y
+                ZIndex: =4
+
+        Location_DataCard7 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_4"
+            Default: =ThisItem.Location
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stationery_1],DataSourceInfo.DisplayName,"field_4")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue53.Selected
+            Width: =687
+            X: =0
+            Y: =4
+            ZIndex: =12
+
+            DataCardKey55 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue53.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue53 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Stationery_1].Location)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Stationery_1.Location,DataCardValue53.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey55.X + DataCardKey55.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage45 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue53.Y + DataCardValue53.Height
+                ZIndex: =3
+
+            StarVisible45 As label:
+                Align: =Align.Center
+                Height: =DataCardKey55.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey55.Y
+                ZIndex: =4
+
+        Item_DataCard4 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_5"
+            Default: =ThisItem.Item
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stationery_1],DataSourceInfo.DisplayName,"field_5")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =687
+            X: =0
+            Y: =5
+            ZIndex: =12
+
+            DataCardKey56 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue54.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue54 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey56.X + DataCardKey56.Width
+                Y: =10
+                ZIndex: =2
+
+        Qty_DataCard9 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_6"
+            Default: =ThisItem.Qty
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stationery_1],DataSourceInfo.DisplayName,"field_6")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =687
+            X: =0
+            Y: =6
+            ZIndex: =12
+
+            DataCardKey57 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue55.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue55 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey57.X + DataCardKey57.Width
+                Y: =10
+                ZIndex: =2
+
+        Unit_DataCard5 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_7"
+            Default: =ThisItem.Unit
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stationery_1],DataSourceInfo.DisplayName,"field_7")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue56.Selected
+            Width: =687
+            X: =0
+            Y: =7
+            ZIndex: =12
+
+            DataCardKey58 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue56.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue56 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Stationery_1].Unit)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Stationery_1.Unit,DataCardValue56.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey58.X + DataCardKey58.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage46 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue56.Y + DataCardValue56.Height
+                ZIndex: =3
+
+            StarVisible46 As label:
+                Align: =Align.Center
+                Height: =DataCardKey58.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey58.Y
+                ZIndex: =4
+
+        Purpose_DataCard2 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_8"
+            Default: =ThisItem.Purpose
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stationery_1],DataSourceInfo.DisplayName,"field_8")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =687
+            X: =0
+            Y: =8
+            ZIndex: =12
+
+            DataCardKey59 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue57.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue57 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Default
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey59.X + DataCardKey59.Width
+                Y: =10
+                ZIndex: =2
+
+        Status_DataCard2 As typedDataCard.comboBoxViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="field_9"
+            Default: =ThisItem.'Status Approval'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Stationery_1],DataSourceInfo.DisplayName,"field_9")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue58.Selected
+            Width: =687
+            X: =0
+            Y: =9
+            ZIndex: =12
+
+            DataCardKey60 As label:
+                AutoHeight: =true
+                Height: =34
+                Text: =Parent.DisplayName
+                Width: =(Parent.Width - 60) * 0.4
+                Wrap: =false
+                X: =30
+                Y: =10 + (DataCardValue58.Height / 2) - (Self.Height / 2)
+                ZIndex: =1
+
+            DataCardValue58 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Items: =Choices([@Stationery_1].'Status Approval')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =Choices(Stationery_1.'Status Approval',DataCardValue58.SearchText)
+                SelectMultiple: =false
+                Width: =(Parent.Width - 60) * 0.6
+                X: =DataCardKey60.X + DataCardKey60.Width
+                Y: =10
+                ZIndex: =2
+
+            ErrorMessage47 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue58.Y + DataCardValue58.Height
+                ZIndex: =3
+
+            StarVisible47 As label:
+                Align: =Align.Center
+                Height: =DataCardKey60.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey60.Y
+                ZIndex: =4
+
+    Icon5_28 As icon.Cancel:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =48
+        Icon: =Icon.Cancel
+        OnSelect: =Navigate('Main Menu')
+        Width: =39
+        X: =1299
+        Y: =14
+        ZIndex: =16
+
+    Group27 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =16
+
+        TextInput2 As text:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderThickness: =3
+            Default: =""
+            DisabledColor: =RGBA(230, 230, 230, 1)
+            Fill: =RGBA(230, 230, 230, 1)
+            Height: =46
+            HintText: ="Search"
+            HoverColor: =ColorFade(Color.Black, 0%)
+            HoverFill: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(230, 230, 230, 1)
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+            Size: =15
+            Width: =544
+            X: =798
+            Y: =108
+            ZIndex: =14
+
+        Icon15_9 As icon.Search:
+            Color: =RGBA(0, 0, 0, 1)
+            Height: =39
+            HoverColor: =ColorFade(Color.Black, 0%)
+            Icon: =Icon.Search
+            Width: =41
+            X: =1301
+            Y: =112
+            ZIndex: =15
+
+    Group23 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =17
+
+        Rectangle21 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.7)
+            Height: =768
+            Visible: =popUpVis
+            Width: =1366
+            ZIndex: =8
+
+        Rectangle22 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =235
+            Visible: =popUpVis
+            Width: =642
+            X: =362
+            Y: =267
+            ZIndex: =9
+
+        Label19 As label:
+            Align: =Align.Center
+            Height: =102
+            Size: =20
+            Text: ="Are You Sure?"
+            Visible: =popUpVis
+            Width: =642
+            X: =362
+            Y: =267
+            ZIndex: =10
+
+        Button29 As button:
+            Fill: =RGBA(255, 191, 0, 1)
+            Height: =64
+            OnSelect: |-
+                =Remove(Stationery_1, Gallery6.Selected); Refresh(Stationery_1); UpdateContext({popUpVis:false})
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =20
+            Text: ="Yes"
+            Visible: =popUpVis
+            Width: =198
+            X: =425
+            Y: =398
+            ZIndex: =11
+
+        Button29_1 As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Height: =64
+            OnSelect: |-
+                =UpdateContext({popUpVis:false})
+            RadiusBottomLeft: =20
+            RadiusBottomRight: =20
+            RadiusTopLeft: =20
+            RadiusTopRight: =20
+            Size: =20
+            Text: ="No"
+            Visible: =popUpVis
+            Width: =198
+            X: =730
+            Y: =398
+            ZIndex: =12
+

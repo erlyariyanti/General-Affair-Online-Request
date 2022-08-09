@@ -1,0 +1,516 @@
+"'Main Menu' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+
+    LblAppName1 As label:
+        Align: =Align.Center
+        Fill: =RGBA(184, 0, 0, 1)
+        Height: =5
+        Text: =""
+        Width: =Parent.Width
+        Y: =77
+        ZIndex: =2
+
+    Canvas1 As fluidGrid.fluidGridWithBlankCard:
+        AcceptsFocus: =true
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =0
+        Height: =610
+        Width: =1326
+        X: =37
+        Y: =158
+        ZIndex: =3
+
+        DataCard1 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =280
+            Width: =1326
+            WidthFit: =false
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            Group11 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =13
+
+                Button21_2 As button:
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =155
+                    HoverColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =ColorFade(Color.Black, 80%)
+                    OnSelect: =Navigate('Snack & Meals')
+                    Text: =""
+                    Width: =232
+                    X: =670
+                    Y: =59
+                    ZIndex: =2
+
+                Image4_3 As image:
+                    Height: =122
+                    Image: ='sm-removebg-preview'
+                    OnSelect: =Navigate('Snack & Meals')
+                    Width: =156
+                    X: =707
+                    Y: =59
+                    ZIndex: =7
+
+                Label6_8 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =43
+                    OnSelect: =Navigate('Snack & Meals')
+                    Size: =18
+                    Text: ="Snack & Meals"
+                    Width: =196
+                    X: =687
+                    Y: =155
+                    ZIndex: =9
+
+            Group16 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =13
+
+                Button21_3 As button:
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =155
+                    HoverColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =ColorFade(Color.Black, 80%)
+                    OnSelect: =Navigate(Uniform)
+                    Text: =""
+                    Width: =232
+                    X: =988
+                    Y: =59
+                    ZIndex: =1
+
+                Image4_4 As image:
+                    Height: =154
+                    Image: ='unifrm-removebg-preview'
+                    OnSelect: =Navigate(Uniform)
+                    Width: =152
+                    X: =1028
+                    Y: =51
+                    ZIndex: =8
+
+                Label6_9 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =43
+                    OnSelect: =Navigate(Uniform)
+                    Size: =18
+                    Text: ="Uniform"
+                    Width: =193
+                    X: =1007
+                    Y: =163
+                    ZIndex: =10
+
+            Group8 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =13
+
+                Button21 As button:
+                    DisplayMode: =If(DataSourceInfo([@'Business Card_1'], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled) //DisplayMode.Edit
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =155
+                    HoverColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =ColorFade(Color.Black, 80%)
+                    OnSelect: |-
+                        =Navigate('Business Card');
+                        ResetForm(Form3)
+                    Text: =""
+                    Width: =232
+                    X: =58
+                    Y: =59
+                    ZIndex: =4
+
+                Label6_6 As label:
+                    Align: =Align.Center
+                    DisplayMode: =If(DataSourceInfo([@'Business Card_1'], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled) //DisplayMode.Edit
+                    FontWeight: =FontWeight.Semibold
+                    Height: =79
+                    OnSelect: |-
+                        =Navigate('Business Card');
+                        ResetForm(Form3)
+                    Size: =18
+                    Text: ="Business Card"
+                    Width: =192
+                    X: =80
+                    Y: =140
+                    ZIndex: =5
+
+                Image4 As image:
+                    DisplayMode: =If(DataSourceInfo([@'Business Card_1'], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled) //DisplayMode.Edit
+                    Height: =121
+                    Image: ='bizz-removebg-preview'
+                    OnSelect: |-
+                        =Navigate('Business Card');
+                        ResetForm(Form3)
+                    Width: =115
+                    X: =119
+                    Y: =54
+                    ZIndex: =6
+
+            Group9 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =13
+
+                Button21_1 As button:
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =155
+                    HoverColor: =RGBA(0, 0, 0, 0)
+                    HoverFill: =ColorFade(Color.Black, 80%)
+                    OnSelect: =Navigate(Stationery)
+                    Text: =""
+                    Width: =232
+                    X: =363
+                    Y: =59
+                    ZIndex: =3
+
+                Image4_2 As image:
+                    Height: =121
+                    Image: ='Sttnry-removebg-preview'
+                    OnSelect: =Navigate(Stationery)
+                    Width: =115
+                    X: =422
+                    Y: =51
+                    ZIndex: =11
+
+                Label6_7 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =79
+                    OnSelect: =Navigate(Stationery)
+                    Size: =18
+                    Text: ="Stationery"
+                    Width: =192
+                    X: =374
+                    Y: =137
+                    ZIndex: =12
+
+        DataCard2 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =280
+            Width: =1326
+            X: =0
+            Y: =1
+            ZIndex: =2
+
+            Button21_8 As button:
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =191
+                HoverColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =ColorFade(Color.Black, 80%)
+                OnSelect: =Navigate('Overtime Shuttle Bus & Meals')
+                Text: =""
+                Width: =276
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+            Button21_7 As button:
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =182
+                HoverColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =ColorFade(Color.Black, 80%)
+                OnSelect: =Navigate(Uniform)
+                Text: =""
+                Width: =232
+                X: =961
+                Y: =33
+                ZIndex: =2
+
+            Button21_6 As button:
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =182
+                HoverColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =ColorFade(Color.Black, 80%)
+                OnSelect: =Navigate(Uniform)
+                Text: =""
+                Width: =232
+                X: =655
+                Y: =33
+                ZIndex: =3
+
+            Button21_5 As button:
+                DisplayMode: =If(DataSourceInfo([@'Manpower_1'], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled) //DisplayMode.Edit
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =182
+                HoverColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =ColorFade(Color.Black, 80%)
+                OnSelect: =Navigate(Manpower)
+                Text: =""
+                Width: =232
+                X: =391
+                Y: =33
+                ZIndex: =4
+
+            Button21_4 As button:
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =193
+                HoverColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =ColorFade(Color.Black, 80%)
+                OnSelect: =Navigate(Uniform)
+                Text: =""
+                Width: =269
+                X: =47
+                Y: =33
+                ZIndex: =5
+
+            Label6_12 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Semibold
+                Height: =87
+                OnSelect: =Navigate('Air Conditioner')
+                Size: =18
+                Text: ="Air Conditioner"
+                Width: =269
+                X: =655
+                Y: =139
+                ZIndex: =8
+
+            Label6_13 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Semibold
+                Height: =87
+                OnSelect: =Navigate(CCTV)
+                Size: =18
+                Text: ="CCTV"
+                Width: =269
+                X: =943
+                Y: =139
+                ZIndex: =9
+
+            Image4_6 As image:
+                Height: =148
+                Image: =cctv
+                OnSelect: =Navigate(CCTV)
+                Width: =164
+                X: =996
+                Y: =21
+                ZIndex: =11
+
+            Image4_9 As image:
+                Height: =148
+                Image: =q_1
+                OnSelect: =Navigate('Air Conditioner')
+                Width: =164
+                X: =698
+                Y: =33
+                ZIndex: =13
+
+            Group18 As group:
+                Height: =5
+                Width: =5
+                X: =60
+                Y: =60
+                ZIndex: =14
+
+                Label6_11 As label:
+                    Align: =Align.Center
+                    DisplayMode: =If(DataSourceInfo([@'Manpower_1'], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate(Manpower)
+                    Size: =18
+                    Text: ="Manpower"
+                    Width: =269
+                    X: =366
+                    Y: =144
+                    ZIndex: =7
+
+                Image4_7 As image:
+                    DisplayMode: =If(DataSourceInfo([@'Manpower_1'], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+                    Height: =148
+                    Image: =mp
+                    OnSelect: =Navigate(Manpower)
+                    Width: =164
+                    X: =419
+                    Y: =33
+                    ZIndex: =12
+
+            Group14 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =28
+
+                Label6_10 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('Overtime Shuttle Bus & Meals')
+                    Size: =18
+                    Text: ="Overtime Shuttle Bus & Meals"
+                    Width: =269
+                    X: =47
+                    Y: =149
+                    ZIndex: =6
+
+                Image4_5 As image:
+                    Height: =148
+                    Image: =lembur
+                    OnSelect: =Navigate('Overtime Shuttle Bus & Meals')
+                    Width: =164
+                    X: =100
+                    Y: =21
+                    ZIndex: =10
+
+        DataCard3 As dataCard.blankCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =280
+            Width: =1326
+            X: =0
+            Y: =2
+            ZIndex: =3
+
+            Label6_14 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Semibold
+                Height: =87
+                OnSelect: =Navigate('Exit Permit Form')
+                Size: =18
+                Text: ="Exit Permit"
+                Width: =269
+                X: =42
+                Y: =159
+                ZIndex: =1
+
+            Image4_8 As image:
+                Height: =154
+                Image: =sikb
+                OnSelect: =Navigate('Exit Permit Form')
+                Width: =178
+                X: =88
+                Y: =36
+                ZIndex: =9
+
+            Group22 As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =13
+
+                Label6_15 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate(Souvenir)
+                    Size: =18
+                    Text: ="Souvenir"
+                    Width: =269
+                    X: =372
+                    Y: =149
+                    ZIndex: =8
+
+                Image4_10 As image:
+                    Height: =148
+                    Image: =q_1
+                    OnSelect: =Navigate(Souvenir)
+                    Width: =164
+                    X: =424
+                    Y: =42
+                    ZIndex: =12
+
+            Group22_1 As group:
+                Height: =5
+                Width: =5
+                X: =-332
+                Y: =-2
+                ZIndex: =15
+
+                Label6_16 As label:
+                    Align: =Align.Center
+                    FontWeight: =FontWeight.Semibold
+                    Height: =87
+                    OnSelect: =Navigate('Access Card')
+                    Size: =18
+                    Text: ="Access Card"
+                    Width: =269
+                    X: =657
+                    Y: =143
+                    ZIndex: =13
+
+                Image4_11 As image:
+                    Height: =148
+                    Image: =q_1
+                    OnSelect: =Navigate('Access Card')
+                    Width: =164
+                    X: =709
+                    Y: =36
+                    ZIndex: =14
+
+    Image29 As image:
+        Height: =82
+        Image: ='zyro-image (7)'
+        Width: =339
+        X: =39
+        ZIndex: =4
+
+    Button13 As button:
+        Color: =RGBA(184, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: ="Cambria Math"
+        FontWeight: =FontWeight.Bold
+        Height: =77
+        HoverFill: =ColorFade(Color.DarkRed, 0%)
+        OnSelect: =Navigate('Main Menu')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =25
+        Text: ="Menu"
+        Width: =247
+        X: =758
+        ZIndex: =5
+
+    Button13_1 As button:
+        Color: =RGBA(0, 0, 0, 1)
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: ="Cambria Math"
+        FontWeight: =FontWeight.Bold
+        Height: =77
+        HoverFill: =ColorFade(Color.DarkRed, 0%)
+        OnSelect: =Navigate('View All')
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =25
+        Text: ="Data View"
+        Width: =247
+        X: =1017
+        ZIndex: =6
+
+    Icon2_1 As icon.Leave:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =53
+        Icon: =Icon.Leave
+        OnSelect: =Navigate('Login As')
+        Width: =59
+        X: =1293
+        Y: =6
+        ZIndex: =8
+

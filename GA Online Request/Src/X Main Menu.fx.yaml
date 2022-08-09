@@ -1,0 +1,330 @@
+"'X Main Menu' As screen":
+
+    Label4 As label:
+        Text: =""
+        X: =40
+        Y: =40
+        ZIndex: =3
+
+    Rectangle1 As rectangle:
+        BorderColor: =RGBA(54, 176, 75, 1)
+        BorderThickness: =3
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =258
+        Width: =338
+        X: =87
+        Y: =157
+        ZIndex: =11
+
+    Image5 As image:
+        Height: =160
+        Image: ='id_card-removebg-preview'
+        OnSelect: =Navigate('Business Card')
+        Width: =335
+        X: =90
+        Y: =157
+        ZIndex: =14
+
+    Label6 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =85
+        Size: =16
+        Text: ="Form Pembuatan Business Card"
+        Width: =338
+        X: =87
+        Y: =330
+        ZIndex: =15
+
+    Rectangle2 As rectangle:
+        Fill: =RGBA(54, 176, 75, 1)
+        Height: =4
+        Width: =200
+        X: =156
+        Y: =326
+        ZIndex: =16
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =20
+
+        Rectangle1_8 As rectangle:
+            BorderColor: =RGBA(176, 71, 11, 1)
+            BorderThickness: =3
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =258
+            OnSelect: =Navigate('Vehicles & Drivers')
+            Width: =338
+            X: =519
+            Y: =157
+            ZIndex: =12
+
+        Image6 As image:
+            Height: =130
+            Image: =q
+            OnSelect: =Navigate('Vehicles & Drivers')
+            Width: =345
+            X: =517
+            Y: =181
+            ZIndex: =17
+
+        Rectangle2_1 As rectangle:
+            BorderColor: =RGBA(176, 71, 11, 1)
+            Fill: =RGBA(189, 99, 9, 1)
+            Height: =4
+            OnSelect: =Navigate('Vehicles & Drivers')
+            Width: =200
+            X: =588
+            Y: =330
+            ZIndex: =18
+
+        Label6_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =81
+            OnSelect: =Navigate('Vehicles & Drivers')
+            Size: =16
+            Text: |-
+                ="Form Ops Vehicles &
+                Drivers"
+            Width: =338
+            X: =524
+            Y: =334
+            ZIndex: =19
+
+    Rectangle4 As rectangle:
+        BorderColor: =RGBA(255, 161, 10, 1)
+        BorderThickness: =3
+        Fill: =RGBA(237, 196, 12, 0)
+        Height: =258
+        Width: =338
+        X: =88
+        Y: =447
+        ZIndex: =23
+
+    Image8 As image:
+        Height: =153
+        Image: ='z-removebg-preview'
+        Width: =371
+        X: =68
+        Y: =449
+        ZIndex: =26
+
+    Rectangle2_3 As rectangle:
+        BorderColor: =RGBA(176, 71, 11, 1)
+        Fill: =RGBA(245, 158, 7, 1)
+        Height: =4
+        OnSelect: =Navigate('Transport Lembur')
+        Width: =200
+        X: =153
+        Y: =616
+        ZIndex: =27
+
+    Label6_3 As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =85
+        Size: =16
+        Text: ="Form Permohonan Pemakaian Kendaraan"
+        Width: =333
+        X: =90
+        Y: =618
+        ZIndex: =28
+
+    Group4 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =28
+
+        Rectangle1_9 As rectangle:
+            BorderColor: =RGBA(40, 136, 153, 1)
+            BorderThickness: =3
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =258
+            OnSelect: =Navigate('Transport Lembur')
+            Width: =338
+            X: =941
+            Y: =157
+            ZIndex: =13
+
+        Image7 As image:
+            Height: =194
+            Image: ='x-removebg-preview'
+            OnSelect: =Navigate('Transport Lembur')
+            Width: =383
+            X: =915
+            Y: =143
+            ZIndex: =20
+
+        Rectangle2_2 As rectangle:
+            BorderColor: =RGBA(176, 71, 11, 1)
+            Fill: =RGBA(27, 118, 150, 1)
+            Height: =4
+            OnSelect: =Navigate('Transport Lembur')
+            Width: =200
+            X: =1010
+            Y: =330
+            ZIndex: =21
+
+        Label6_2 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =77
+            OnSelect: =Navigate('Transport Lembur')
+            Size: =16
+            Text: ="Form Permintaan Transportasi Untuk Antar Pulang Lembur"
+            Width: =338
+            X: =941
+            Y: =334
+            ZIndex: =22
+
+    Group5 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =32
+
+        Rectangle4_2 As rectangle:
+            BorderColor: =RGBA(96, 100, 120, 1)
+            BorderThickness: =3
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =258
+            OnSelect: =Navigate('Exit Permit Form')
+            Width: =338
+            X: =519
+            Y: =445
+            ZIndex: =25
+
+        Image11 As image:
+            Height: =169
+            Image: ='sj-removebg-preview'
+            OnSelect: =Navigate('Exit Permit Form')
+            Width: =333
+            X: =524
+            Y: =447
+            ZIndex: =29
+
+        Rectangle2_4 As rectangle:
+            BorderColor: =RGBA(176, 71, 11, 1)
+            Fill: =RGBA(112, 106, 95, 1)
+            Height: =4
+            OnSelect: =Navigate('Exit Permit Form')
+            Width: =200
+            X: =594
+            Y: =616
+            ZIndex: =30
+
+        Label6_4 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =85
+            OnSelect: =Navigate('Exit Permit Form')
+            Size: =16
+            Text: ="Form SKIB"
+            Width: =333
+            X: =524
+            Y: =618
+            ZIndex: =31
+
+    Image16 As image:
+        Height: =80
+        Image: =jjj
+        ImagePosition: =ImagePosition.Fill
+        Width: =1366
+        ZIndex: =35
+
+    Group6 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =35
+
+        Rectangle4_1 As rectangle:
+            BorderColor: =RGBA(99, 120, 230, 1)
+            BorderThickness: =3
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =258
+            OnSelect: =Navigate('X General Request')
+            Width: =338
+            X: =941
+            Y: =445
+            ZIndex: =24
+
+        Label6_5 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =85
+            OnSelect: =Navigate('X General Request')
+            Size: =16
+            Text: ="Form General Request"
+            Width: =333
+            X: =946
+            Y: =616
+            ZIndex: =32
+
+        Image12 As image:
+            Height: =153
+            Image: ='ga-removebg-preview'
+            OnSelect: =Navigate('X General Request')
+            Width: =333
+            X: =946
+            Y: =449
+            ZIndex: =33
+
+        Rectangle2_5 As rectangle:
+            BorderColor: =RGBA(176, 71, 11, 1)
+            Fill: =RGBA(37, 149, 230, 1)
+            Height: =4
+            OnSelect: =Navigate('X General Request')
+            Width: =200
+            X: =1006
+            Y: =618
+            ZIndex: =34
+
+    Label11 As label:
+        Align: =Align.Center
+        Color: =RGBA(116, 116, 116, 1)
+        Font: =Font.Verdana
+        Height: =60
+        Size: =30
+        Text: ="Main Menu"
+        Width: =328
+        X: =111
+        ZIndex: =36
+
+    Group7 As group:
+        Height: =5
+        Width: =5
+        X: =60
+        Y: =60
+        ZIndex: =41
+
+        Icon2 As icon.Leave:
+            Color: =RGBA(107, 59, 0, 1)
+            Height: =33
+            Icon: =Icon.Leave
+            OnSelect: =Navigate(login)
+            Width: =51
+            X: =1279
+            Y: =11
+            ZIndex: =37
+
+        Label13 As label:
+            Align: =Align.Center
+            Color: =RGBA(117, 34, 1, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            OnSelect: =Navigate(login)
+            Text: ="Logout"
+            Width: =92
+            X: =1258
+            Y: =40
+            ZIndex: =40
+

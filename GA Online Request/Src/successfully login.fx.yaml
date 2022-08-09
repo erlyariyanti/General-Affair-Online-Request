@@ -1,0 +1,22 @@
+"'successfully login' As screen.'tabletLayout_Success_ver3.0'":
+    BackgroundImage: =
+
+    LblSuccessMsg1 As label:
+        Align: =Align.Center
+        Font: ="Cambria Math"
+        Height: =767
+        OnSelect: =Navigate('Main Menu')
+        Size: =40
+        Text: ="Successfully Login"
+        Width: =1366
+        ZIndex: =2
+
+    Icon1 As icon.CheckBadge:
+        Color: =RGBA(54, 176, 75, 1)
+        Height: =150
+        Icon: =Icon.CheckBadge
+        Width: =178
+        X: =594
+        Y: =177
+        ZIndex: =4
+

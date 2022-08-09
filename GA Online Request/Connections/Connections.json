@@ -1,0 +1,138 @@
+{
+  "2705f055-b52e-4f09-a6a8-6b077f5b0379": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1588/1.0.1588.2938/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://salesbridge.sharepoint.com/teams/msteams_967ee7": {
+        "dataSources": {
+          "AC": {
+            "tableName": "e5c7695d-b4e6-46b0-b7c8-045a874ce7a7"
+          },
+          "Access Card_1": {
+            "tableName": "b8310bb8-77b5-488c-bf49-917572e9dfa4"
+          },
+          "Access_ISRO": {
+            "tableName": "cc3de9c7-45be-47f1-b716-7c317e6ac9bb"
+          },
+          "Business Card_1": {
+            "tableName": "f00589ff-5b7f-4db3-8fec-5eeb12af42c6"
+          },
+          "CCTV_1": {
+            "tableName": "1681a523-5456-4fd4-bd94-cab322d4c12d"
+          },
+          "Data Validation": {
+            "tableName": "8e49881a-abe7-4907-8d60-5412f133d6b3"
+          },
+          "Exit Permit": {
+            "tableName": "124f223b-f34a-4fcb-bfe4-25ba8549e837"
+          },
+          "Form Laporan Kronologis Kecelakaan Kendaraan_1": {
+            "tableName": "bfbbc1c6-e312-4a88-9d2f-df688e9473f4"
+          },
+          "Form SKIB": {
+            "tableName": "06246fd1-c782-40a0-96a4-f6b3bbc505f8"
+          },
+          "General Form": {
+            "tableName": "b11b93d0-5b9f-44db-80fc-883fcd536f78"
+          },
+          "Manpower_1": {
+            "tableName": "e34d6880-d6ed-41ef-91ab-b0beda65f266"
+          },
+          "Menu": {
+            "tableName": "9db3577f-317f-4f56-be9e-bdf20b158d77"
+          },
+          "Overtime Shuttle Bus & Meals_1": {
+            "tableName": "42928099-74d3-401e-811e-3c58c3c369d3"
+          },
+          "Scrollable": {
+            "tableName": "cd24db55-7d8f-4382-8b08-463fefcf5fd3"
+          },
+          "Snack & Meals_1": {
+            "tableName": "737a7bd5-58d6-4f0b-ab27-9874c6e72c81"
+          },
+          "Souvenir_1": {
+            "tableName": "d7e2a23e-330c-4b93-a9ef-820a3c2f2411"
+          },
+          "Stationery_1": {
+            "tableName": "bafa7fb8-2b3b-4063-845a-eb4ca635dc5b"
+          },
+          "Uniform_1": {
+            "tableName": "22d767b4-f125-4b92-bb14-5972e7f26f0b"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "General Form",
+      "Form SKIB",
+      "Form Laporan Kronologis Kecelakaan Kendaraan_1",
+      "Scrollable",
+      "Menu",
+      "Access_ISRO",
+      "Stationery_1",
+      "Snack & Meals_1",
+      "Manpower_1",
+      "Uniform_1",
+      "AC",
+      "Business Card_1",
+      "Exit Permit",
+      "Souvenir_1",
+      "CCTV_1",
+      "Access Card_1",
+      "Overtime Shuttle Bus & Meals_1",
+      "Data Validation"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "2705f055-b52e-4f09-a6a8-6b077f5b0379"
+  },
+  "801d03ad-7982-49d0-a461-2135d3998496": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1587/1.0.1587.2924/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "801d03ad-7982-49d0-a461-2135d3998496"
+  },
+  "96f9ca1f-a883-411c-bf80-17dcb1f9158d": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1588/1.0.1588.2938/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "96f9ca1f-a883-411c-bf80-17dcb1f9158d"
+  }
+}

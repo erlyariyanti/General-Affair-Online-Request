@@ -1,0 +1,10 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |+
+        =//ClearCollect(unf, Uniform_1);
+        ClearCollect(menuList,{id:"All", name:"All"},{id:"Approved", name:"Approved"},{id:"Pending", name:"Pending"},{id:"Rejected", name:"Rejected"});
+        
+        Set(FormTypeVar,"Blank");
+        
+    StartScreen: =
+

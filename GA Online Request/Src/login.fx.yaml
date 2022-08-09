@@ -1,0 +1,128 @@
+login As screen:
+    BackgroundImage: ='892'
+
+    Rectangle3 As rectangle:
+        Fill: =RGBA(0, 18, 107, 0.5)
+        Height: =768
+        Width: =658
+        X: =708
+        ZIndex: =1
+
+    Label8 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: ="Cambria Math"
+        Height: =53
+        Size: =25
+        Text: ="Password"
+        Width: =232
+        X: =782
+        Y: =377
+        ZIndex: =2
+
+    user As text:
+        Default: =""
+        Font: =Font.'Courier New'
+        Height: =53
+        HintText: ="Input User Name"
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Size: =20
+        Width: =550
+        X: =782
+        Y: =289
+        ZIndex: =3
+
+    pass As text:
+        Default: =""
+        Font: =Font.'Courier New'
+        Height: =55
+        HintText: ="Input Password"
+        Mode: =If(Button12.Pressed,TextMode.SingleLine,Password)
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Size: =20
+        Width: =550
+        X: =782
+        Y: =448
+        ZIndex: =4
+
+    Button2 As button:
+        AutoDisableOnSelect: =false
+        Fill: =RGBA(68, 171, 227, 1)
+        Font: ="Cambria Math"
+        FontWeight: =FontWeight.Normal
+        Height: =68
+        HoverColor: =RGBA(39, 113, 194, 1)
+        HoverFill: =ColorFade(Color.White, 0%)
+        OnSelect: |
+            =If(!IsBlank(LookUp(Access_ISRO, Title=user.Text And password=pass.Text).Title),Navigate('successfully login'), Notify("Incorrect Login Detail",Error));
+            Reset(user);
+            Reset(pass);
+            //If(pass.Text="1234" && user.Text="admin", Navigate('successfully login'), Notify("User atau Password Tidak Sesuai", NotificationType.Error));
+            //If(!IsBlank(LookUp(login1, Title=DataCardValue35.Text And password=DataCardValue36.Text).Title),
+            //Navigate(Tampilan_Adm_S),
+            //Notify("Username dan Password Salah", NotificationType.Error));
+        Size: =25
+        Text: ="Login"
+        Width: =528
+        X: =791
+        Y: =571
+        ZIndex: =5
+
+    Label7 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        Font: ="Cambria Math"
+        Height: =53
+        Size: =25
+        Text: ="User Name"
+        Width: =337
+        X: =782
+        Y: =228
+        ZIndex: =6
+
+    Icon6 As icon.Person:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =30
+        Icon: =Icon.Person
+        Width: =35
+        X: =1284
+        Y: =301
+        ZIndex: =7
+
+    Icon7 As icon.View:
+        Color: =RGBA(0, 0, 0, 1)
+        Height: =30
+        Icon: =Icon.Hide
+        Width: =35
+        X: =1284
+        Y: =462
+        ZIndex: =8
+
+    Button12 As button:
+        Color: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =55
+        HoverColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =ColorFade (Color.Transparent, 0%)
+        Text: ="Button"
+        Width: =72
+        X: =1247
+        Y: =465
+        ZIndex: =9
+
+    Label26_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        Font: ="Cambria Math"
+        Height: =66
+        Size: =40
+        Text: ="Login"
+        Width: =394
+        X: =840
+        Y: =73
+        ZIndex: =10
+
